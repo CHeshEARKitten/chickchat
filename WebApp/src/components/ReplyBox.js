@@ -20,6 +20,8 @@ export class ReplyBox extends React.Component {
             <div>
 
                 {/* Exercise 2: Render a text input and a button */}
+                <input value={this.state.text} onChange={this.updateText} />
+                <button onClick={this.sendReply} disabled={this.state.text===""}>Send</button>
 
             </div>
         )
