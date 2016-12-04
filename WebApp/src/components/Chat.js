@@ -31,7 +31,7 @@ export class Chat extends React.Component {
 
 function renderMessage (message) {
     return (
-        <li key={message.messageId}>
+        <li style={{wordBreak: "break-all"}} key={message.messageId}>
 
             {/* Exercise 3: Add message author */}
             {message.author.name +": "}
@@ -45,7 +45,7 @@ function renderMessage (message) {
 
 const ulStyle = {
     overflowY: "scroll",
-
+    listStyle: "none"
     /* Exercise 4: Add your own styles */
 
 }
@@ -71,7 +71,7 @@ function getMessageBody (message) {
     if (message.data) {
         return <img src={message.data} style={imageStyle} />
     } else {
-        return message.text
+        return( <span style={{color:"#8B008B"}}> {message.text} </span> )
     }
 }
 
